@@ -20,6 +20,13 @@ description: Use this skill when the user wants to quickly understand an unfamil
 7. 政策、技术、需求、资本哪些因素会改变格局。
 8. 最终意味着什么，下一步验证什么。
 
+本 Skill 默认交付增强版行业研究简报，除非用户明确要求压缩版。在最终版中，以下四类高价值咨询输出默认为必选项：
+
+- 更完整的市场数据表
+- 重点公司对比表
+- 政策时间线
+- “如果要进入这个行业，应先做什么”的建议版
+
 ## Total Research Logic
 
 ```mermaid
@@ -88,6 +95,14 @@ flowchart LR
 - Whether sources and links are required:
 ```
 
+增强版默认参数：
+
+```markdown
+- Include key company comparison: Yes
+- Include policy timeline: Yes
+- Include entry recommendations: Yes
+```
+
 ## Assumptions when inputs are missing
 
 若用户未提供完整信息，基于上下文合理假设，并在输出开头显式写出假设条件。
@@ -108,6 +123,7 @@ flowchart LR
 - 时间预算缺失时，默认按 1 小时标准简报执行
 - 输出深度缺失时，默认 `standard brief`
 - 来源要求缺失时，默认对关键事实和关键数字附来源
+- 若未说明是否需要增强模块，默认包含重点公司对比表、政策时间线、进入建议与优先动作
 
 ## Workflow
 
@@ -215,6 +231,7 @@ Recommended output format:
 - 产业链与价值流图
 - 关键角色表
 - 利润池初判
+- 关键控制点与价值捕获摘要
 
 Transition / implication:
 
@@ -251,6 +268,8 @@ Recommended output format:
 - 市场数据表
 - 行业阶段判断
 - 增长驱动拆解
+- 扩展市场明细表
+- 细分赛道或区域拆分表
 
 Transition / implication:
 
@@ -287,6 +306,8 @@ Recommended output format:
 - 商业模式对比表
 - 利润池说明
 - Unit economics / leverage 简析
+- 场景盈利模型
+- “先做哪个场景”的判断
 
 Transition / implication:
 
@@ -323,6 +344,8 @@ Recommended output format:
 - 竞争分层表
 - 胜负手分析
 - 进入壁垒判断
+- 重点公司对比表
+- potential partner / competitor map
 
 Transition / implication:
 
@@ -360,6 +383,8 @@ Recommended output format:
 - 外部驱动因素矩阵
 - 影响机制说明
 - 时间跨度判断
+- 政策时间线
+- 场景成熟度与时间窗口判断
 
 Transition / implication:
 
@@ -396,6 +421,7 @@ Recommended output format:
 - 风险机会矩阵
 - Core contradiction 摘要
 - To verify 列表
+- “进入行业的优先动作”建议清单
 
 Transition / implication:
 
@@ -452,28 +478,36 @@ Transition / implication:
 - 保留来源冲突的数据口径，不要强行合并
 - 不要虚构数据
 - 对无法核实的数据必须标注 `[To verify]`
+- 如果给出进入建议，必须回扣前文的市场、盈利、竞争和政策判断
+- 如果给出重点公司结论，不能只列公司名，必须说明其胜负手与局限
+- 如果给出政策时间线，必须说明每个政策节点对行业意味着什么
 - 保持咨询风格：结论先行、结构清楚、面向判断
 - 输出必须能被复制进咨询材料或内部研究文档
 
 ## Default deliverables
 
-默认输出包括：
+最终版默认输出包括：
 
 - 一句话行业结论
 - 行业研究总逻辑图
 - 结构化 Markdown 行业研究简报
 - 产业链与价值流图
 - 市场数据表
+- 更完整的重点市场指标表
 - 竞争分层表
+- 重点公司对比表
 - 外部驱动因素矩阵
+- 政策时间线
 - 风险机会矩阵
 - 行业关键 KPI 列表
+- 关键控制点与利润池摘要
 - 来源清单
 - 后续验证优先级表
+- 进入建议与优先动作
 
 ## Optional extensions
 
-当用户明确要求，或这些内容能显著提升结果时，再额外加入：
+以下内容作为增强版最终版之外的进一步扩展，仅在用户明确要求时加入：
 
 - 八大数据库沉淀
 - 竞品运营与盈利拆解
@@ -485,6 +519,8 @@ Transition / implication:
 - 投融资与资本市场动态
 - 客户访谈提纲
 - 后续深度研究计划
+- 重点公司深度对比页
+- 行业进入策略建议页
 
 ## Source and citation standards
 
@@ -517,6 +553,7 @@ Transition / implication:
 - 是否包含至少 2 个 Mermaid 图
 - 是否解释了市场、商业模式、竞争、政策之间的因果关系
 - 是否包含产业链图、市场表、竞争表、驱动矩阵、风险机会矩阵
+- 是否在合适情况下补充了重点公司对比表、政策时间线和进入建议
 - 是否区分事实、估计、判断、假设和待验证项
 - 是否保留来源分级、证据标签、不要虚构数据、标注 `[To verify]`
 - 是否适合在 1 小时内完成一版初步研究
@@ -536,6 +573,39 @@ Inputs:
 
 Expected output:
 A consulting-style Markdown brief with executive thesis, industry boundary, logic map, value-chain analysis, market data table, business model analysis, competitive landscape, external-driver matrix, risk-opportunity synthesis, source list, and next-step validation priorities.
+
+## Chinese default prompt template
+
+```markdown
+请使用 $quick-industry-research，对【行业名称】进行增强版行业研究，并输出一份咨询风格的 Markdown 简报。
+
+研究参数：
+- 行业：
+- 国家/地区：
+- 研究目的：
+- 输出深度：标准简报
+- 时间预算：1 小时
+- 输出语言：中文
+- 需要来源与链接：是
+
+请按“结论前置、问题递进、证据支撑、图表化输出”的方式完成研究，必须包含：
+- 一句话结论与核心判断
+- 行业研究总逻辑图
+- 行业定义与研究边界
+- 产业链与价值流图
+- 市场数据表与扩展市场明细表
+- 商业模式与利润池分析
+- 竞争分层表与重点公司对比表
+- 外部驱动因素矩阵
+- 政策时间线
+- 风险机会矩阵
+- 行业关键 KPI
+- 进入建议与优先动作
+- 后续验证优先级表
+- 来源清单与证据标签
+
+请不要只罗列资料。每一章都必须回答“这对最终判断意味着什么”，并在章节结尾写一句 Transition / Implication，说明为什么进入下一章。
+```
 
 ## Reference files
 

@@ -116,6 +116,7 @@ How it supports judgment:
 Output it supports:
 
 - 市场数据表
+- 扩展市场明细表
 - 增长驱动拆解
 - 行业阶段判断
 
@@ -192,6 +193,7 @@ How it supports judgment:
 Output it supports:
 
 - 竞争分层表
+- 重点公司对比表
 - 胜负手判断
 - 壁垒分析
 
@@ -335,13 +337,84 @@ Output it supports:
 - 风险机会矩阵
 - Core contradiction summary
 - 验证优先级表
+- 进入建议清单
 
 Data quality requirements:
 
 - 每个机会都应对应至少一个关键风险
 - 每条重大风险或重大机会都应能追溯到前文证据
 
-## 10. 1-hour execution checklist
+## 10. Company case database
+
+This database serves:
+
+- 回答 `Which companies deserve deeper attention?`
+- 为重点公司对比、案例页和后续深挖提供材料
+
+Fields to collect:
+
+- 公司名
+- 主要赛道
+- 产品 / 服务
+- 商业模式
+- 场景落地
+- 技术或渠道优势
+- 合规或资质进展
+- 当前阶段
+- 风险点
+- 可复用经验
+
+How it supports judgment:
+
+- 帮助从“谁在行业里”升级到“哪些公司最值得跟踪”
+- 支持对标分析、合作对象筛选和案例提炼
+
+Output it supports:
+
+- 重点公司对比表
+- 公司案例页
+- Best practice summary
+
+Data quality requirements:
+
+- 不允许只有公司介绍，必须说明其对行业判断的意义
+- 优先使用公司公告、年报、招股书、官方披露和可信媒体
+
+## 11. Entry strategy database
+
+This database serves:
+
+- 回答 `If we want to enter, where should we start?`
+- 为咨询判断中的进入建议和优先动作提供依据
+
+Fields to collect:
+
+- 进入路径
+- 对应场景
+- 所需能力
+- 所需资源
+- 主要风险
+- 进入门槛
+- 验证动作
+- 预期时间窗口
+
+How it supports judgment:
+
+- 把行业研究转成更接近行动建议的输出
+- 帮助区分“值得看”与“值得现在进入”
+
+Output it supports:
+
+- 进入建议表
+- 优先动作清单
+- Validation roadmap
+
+Data quality requirements:
+
+- 进入建议必须回扣市场、盈利、竞争和政策四个维度
+- 不允许脱离前文证据给出泛化建议
+
+## 12. 1-hour execution checklist
 
 ### 0-5 min: Frame the question
 
@@ -383,7 +456,7 @@ Data quality requirements:
 - 建立 risk and opportunity database
 - 输出核心矛盾、风险机会矩阵、后续验证优先级
 
-## 11. Source quality hierarchy
+## 13. Source quality hierarchy
 
 按以下顺序优先取材：
 
@@ -402,7 +475,7 @@ Use rules:
 - 二手转引数据尽量追溯原始来源
 - 低置信度来源只能作为补充，不可直接支撑核心结论
 
-## 12. Evidence tagging rules
+## 14. Evidence tagging rules
 
 对每条关键结论、关键数字或高风险表述，尽量打上证据标签：
 

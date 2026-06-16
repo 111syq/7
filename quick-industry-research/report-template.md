@@ -95,6 +95,12 @@ Market data table:
 | Penetration rate |  |  |  |  | Fact / Estimate |  |
 | User scale / volume |  |  |  |  | Fact / Estimate |  |
 
+Extended market detail table:
+
+| Segment / region | Size | Growth | Key driver | Competitive intensity | Implication |
+| --- | --- | --- | --- | --- | --- |
+|  |  |  |  |  |  |
+
 Transition / Implication:
 - Market attractiveness only matters if business model and profit pool are viable, so the next section focuses on how the industry actually makes money.
 
@@ -131,6 +137,12 @@ Competitive landscape table:
 | Tier 2 |  |  |  |  |  |
 | Tier 3 |  |  |  |  |  |
 
+Key company comparison table:
+
+| Company | Core segment | Business model | Differentiator | Barrier source | Current stage | Key risk |
+| --- | --- | --- | --- | --- | --- | --- |
+|  |  |  |  |  |  |  |
+
 Transition / Implication:
 - Competition cannot be understood in isolation, because policy, technology, demand, and capital can still change the rules of the game.
 
@@ -149,6 +161,12 @@ External-driver matrix:
 | Technology | Positive / Negative / Mixed |  | Short / Medium / Long |  |  |
 | Demand | Positive / Negative / Mixed |  | Short / Medium / Long |  |  |
 | Capital | Positive / Negative / Mixed |  | Short / Medium / Long |  |  |
+
+Policy timeline:
+
+| Date | Policy / event | Institution | What changed | Why it matters |
+| --- | --- | --- | --- | --- |
+|  |  |  |  |  |
 
 Transition / Implication:
 - External drivers reshape risks, opportunities, and timing, so the next section weighs these forces against the industry’s internal strengths and weaknesses.
@@ -178,6 +196,12 @@ Transition / Implication:
 - Biggest uncertainty:
 - Recommended next research actions:
 
+Entry recommendation table:
+
+| Entry path | Why now | Required capability | Main risk | Recommended first step |
+| --- | --- | --- | --- | --- |
+|  |  |  |  |  |
+
 Next-step validation priority table:
 
 | Priority | Question to verify | Why it matters | Evidence needed | Owner / next action |
@@ -203,3 +227,4 @@ Transition / Implication:
 - Every chapter must end with a transition sentence to the next chapter.
 - Prefer evidence-backed conclusions over descriptive summaries.
 - Preserve uncertainty explicitly with `[Estimate]`, `[Assumption]`, and `[To verify]`.
+- When possible, enrich the brief with an extended market table, key company comparison, policy timeline, and entry recommendation table.
