@@ -1,6 +1,6 @@
 # Quick Industry Research Asset Framework
 
-This file defines how to convert rapid industry research into reusable research assets. These databases are not passive storage buckets. Each one exists to answer a specific research question, support a specific judgment, and feed a specific chart, table, or conclusion in the final brief.
+This file defines how to convert rapid industry research into reusable research assets. These assets are not passive storage buckets. Each one exists to answer a specific question in the report, support a specific judgment, and feed a specific visual or table.
 
 ## Research Asset Logic
 
@@ -17,10 +17,10 @@ flowchart LR
 
 ## 1. Industry definition database
 
-This database serves:
+Serves which report question:
 
-- 回答 `What exactly are we studying?`
-- 为报告中的 `Research Scope and Initial Hypothesis` 与 `Industry Definition` 章节提供基础
+- `What exactly are we studying?`
+- Supports `Research Scope and Initial Hypothesis` and `Industry Definition`
 
 Fields to collect:
 
@@ -39,23 +39,30 @@ How it supports judgment:
 - 防止后续市场数据、竞争格局和政策分析出现口径混乱
 - 帮助判断哪些公司和数据应被纳入正式分析
 
-Output it supports:
+Supported outputs:
 
 - Scope summary
-- Included / excluded scope table
-- Adjacent concept comparison
+- Included / excluded scope list
+- Adjacent concept comparison table
 
 Data quality requirements:
 
 - 优先采用政策口径、上市公司口径、行业协会口径或主流研究定义
 - 若存在多个定义，必须保留差异并说明为何采用某一口径
 
+Typical sources:
+
+- 政府政策
+- 行业协会
+- 券商或研究机构定义页
+- 上市公司年报与招股书
+
 ## 2. Value chain database
 
-This database serves:
+Serves which report question:
 
-- 回答 `How does the industry work?`
-- 为报告中的 `Industry Structure` 章节提供结构基础
+- `How does the industry work?`
+- Supports `Industry Structure and Value Chain`
 
 Fields to collect:
 
@@ -74,23 +81,31 @@ How it supports judgment:
 - 识别行业中真正掌握控制权和利润权的环节
 - 为后续商业模式、利润池和竞争优势判断提供基础
 
-Output it supports:
+Supported outputs:
 
 - 产业链图
 - 价值流图
-- 控制点说明
+- 产业链分析表
+- 控制点摘要
 
 Data quality requirements:
 
-- 不只列角色名称，必须能说明角色之间的关系
-- 若行业是平台型或生态型结构，需体现网络关系而非线性链条
+- 不只列角色名称，必须说明角色之间的关系
+- 平台型或生态型行业需体现网络关系，而不是机械线性链条
+
+Typical sources:
+
+- 公司官网
+- 行业白皮书
+- 券商产业链图
+- 专家访谈
 
 ## 3. Market data database
 
-This database serves:
+Serves which report question:
 
-- 回答 `How large is the opportunity?`
-- 为报告中的 `Market Space` 章节提供事实基础
+- `How large is the opportunity?`
+- Supports `Market Space and Growth Drivers`
 
 Fields to collect:
 
@@ -109,11 +124,11 @@ Fields to collect:
 
 How it supports judgment:
 
-- 用于判断行业是否有足够空间
+- 判断行业是否有足够空间
 - 支持增长驱动拆解和行业阶段判断
-- 帮助识别“大市场低盈利”与“小市场高价值”差异
+- 区分“大市场低质量”与“小市场高价值”
 
-Output it supports:
+Supported outputs:
 
 - 市场数据表
 - 扩展市场明细表
@@ -126,12 +141,19 @@ Data quality requirements:
 - 历史事实与预测值分开记录
 - 对冲突来源保留差异，不强行合并
 
+Typical sources:
+
+- 官方统计
+- 行业协会
+- 研究机构
+- 上市公司披露
+
 ## 4. Business model database
 
-This database serves:
+Serves which report question:
 
-- 回答 `How does the industry make money?`
-- 为报告中的 `Business Model` 章节提供比较材料
+- `How does the industry make money?`
+- Supports `Business Model and Profit Pool`
 
 Fields to collect:
 
@@ -148,27 +170,34 @@ Fields to collect:
 
 How it supports judgment:
 
-- 判断行业增长是否可转化为盈利
+- 判断行业增长是否能转化为盈利
 - 识别高利润池与低利润池环节
 - 支持“值不值得进入”与“应切入哪个模式”的判断
 
-Output it supports:
+Supported outputs:
 
-- 商业模式对比表
-- 利润池分析
+- 商业模式表
+- 利润池摘要
 - Entry barrier summary
 
 Data quality requirements:
 
 - 至少用 1 到 3 个典型公司或模式验证
-- 对没有直接财务数据的模式，可用替代证据，但需标记 `[Judgment]` 或 `[Estimate]`
+- 缺少直接财务数据时，可用替代证据，但需标记 `[Judgment]` 或 `[Estimate]`
+
+Typical sources:
+
+- 年报
+- 招股书
+- 投资者演示材料
+- 公司定价页与产品页
 
 ## 5. Company and competitor database
 
-This database serves:
+Serves which report question:
 
-- 回答 `Who wins and why?`
-- 为报告中的 `Competitive Landscape` 章节提供核心判断素材
+- `Who wins and why?`
+- Supports `Competitive Landscape`
 
 Fields to collect:
 
@@ -186,13 +215,12 @@ Fields to collect:
 
 How it supports judgment:
 
-- 用于判断行业集中度、胜负手和壁垒
-- 帮助回答谁更有机会持续胜出
-- 支持进入策略和竞争风险判断
+- 判断行业集中度、胜负手和壁垒
+- 帮助识别谁更有机会持续胜出
 
-Output it supports:
+Supported outputs:
 
-- 竞争分层表
+- 竞争格局表
 - 重点公司对比表
 - 胜负手判断
 - 壁垒分析
@@ -202,12 +230,19 @@ Data quality requirements:
 - 市占率缺失时可用渠道覆盖、融资能力、品牌声量、技术资质等替代
 - 不允许只记录公司名而没有优势来源分析
 
+Typical sources:
+
+- 年报
+- 公司官网
+- 融资新闻
+- 行业媒体
+
 ## 6. Policy and regulation database
 
-This database serves:
+Serves which report question:
 
-- 回答 `What changes the game from a policy perspective?`
-- 为报告中的 `External Drivers` 章节提供约束与催化因素
+- `What changes the game from a policy perspective?`
+- Supports `External Drivers`
 
 Fields to collect:
 
@@ -224,10 +259,10 @@ Fields to collect:
 
 How it supports judgment:
 
-- 判断行业是否受到强准入门槛或政策催化
-- 帮助区分政策利好、政策限制和政策不确定性
+- 判断行业是否受强准入门槛或政策催化影响
+- 区分政策利好、政策限制和政策不确定性
 
-Output it supports:
+Supported outputs:
 
 - 政策时间线
 - 政策影响摘要
@@ -235,15 +270,21 @@ Output it supports:
 
 Data quality requirements:
 
-- 政策类信息优先使用监管机构原文或权威转述
+- 政策信息优先使用监管机构原文或权威转述
 - 不能只列标题，必须说明实际影响机制
+
+Typical sources:
+
+- 政府官网
+- 监管部门通告
+- 法规数据库
 
 ## 7. Technology and trend database
 
-This database serves:
+Serves which report question:
 
-- 回答 `What changes the game from a technology and trend perspective?`
-- 为报告中的 `External Drivers` 与机会判断提供依据
+- `What changes the game from a technology perspective?`
+- Supports `External Drivers`
 
 Fields to collect:
 
@@ -259,10 +300,10 @@ Fields to collect:
 
 How it supports judgment:
 
-- 帮助判断技术是短期热点还是长期生产力变量
-- 识别哪些玩家会因技术演进受益或受损
+- 判断技术是短期热点还是长期生产力变量
+- 识别哪些玩家会受益或受损
 
-Output it supports:
+Supported outputs:
 
 - 技术趋势摘要
 - 外部驱动矩阵中的 technology 行
@@ -273,12 +314,19 @@ Data quality requirements:
 - 技术判断必须说明落地程度
 - 对早期技术明确标注不确定性，不可包装成既成事实
 
+Typical sources:
+
+- 技术白皮书
+- 公司技术页
+- 学术论文
+- 产业研究报告
+
 ## 8. Customer and demand database
 
-This database serves:
+Serves which report question:
 
-- 回答 `Why does demand exist and what pain is being solved?`
-- 为市场空间、商业模式和风险机会判断提供需求侧基础
+- `Why does demand exist and what pain is being solved?`
+- Supports `Market Space`, `Business Model`, and `Risks and Opportunities`
 
 Fields to collect:
 
@@ -296,7 +344,7 @@ How it supports judgment:
 - 判断需求是否真实、刚性、可持续
 - 帮助解释增长驱动与商业模式的成立条件
 
-Output it supports:
+Supported outputs:
 
 - Demand-side driver summary
 - 用户痛点摘要
@@ -307,12 +355,20 @@ Data quality requirements:
 - 优先使用访谈、公开用户反馈、研究资料和可验证消费行为
 - 区分显性需求与推测性潜在需求
 
+Typical sources:
+
+- 用户评论
+- 行业访谈
+- 调研报告
+- 产品社区
+
 ## 9. Risk and opportunity database
 
-This database serves:
+Serves which report question:
 
-- 回答 `So what?` 与 `What to verify next?`
-- 为报告中的 `Core Contradictions, Risks and Opportunities` 与 `Consulting Judgment` 提供收束材料
+- `So what?`
+- `What to verify next?`
+- Supports `Core Contradictions, Risks and Opportunities` and `Consulting Judgment`
 
 Fields to collect:
 
@@ -332,7 +388,7 @@ How it supports judgment:
 - 把前面所有分析收束为最终咨询判断
 - 支持优先级排序和下一步验证计划
 
-Output it supports:
+Supported outputs:
 
 - 风险机会矩阵
 - Core contradiction summary
@@ -344,12 +400,19 @@ Data quality requirements:
 - 每个机会都应对应至少一个关键风险
 - 每条重大风险或重大机会都应能追溯到前文证据
 
+Typical sources:
+
+- 前述全部资产库
+- 管理层指引
+- 政策节点
+- 关键财务或运营数据
+
 ## 10. Company case database
 
-This database serves:
+Serves which report question:
 
-- 回答 `Which companies deserve deeper attention?`
-- 为重点公司对比、案例页和后续深挖提供材料
+- `Which companies deserve deeper attention?`
+- Supports enhanced competitor reading and case extraction
 
 Fields to collect:
 
@@ -367,9 +430,8 @@ Fields to collect:
 How it supports judgment:
 
 - 帮助从“谁在行业里”升级到“哪些公司最值得跟踪”
-- 支持对标分析、合作对象筛选和案例提炼
 
-Output it supports:
+Supported outputs:
 
 - 重点公司对比表
 - 公司案例页
@@ -378,14 +440,20 @@ Output it supports:
 Data quality requirements:
 
 - 不允许只有公司介绍，必须说明其对行业判断的意义
-- 优先使用公司公告、年报、招股书、官方披露和可信媒体
+
+Typical sources:
+
+- 年报
+- 官方公告
+- 招股书
+- 可信媒体
 
 ## 11. Entry strategy database
 
-This database serves:
+Serves which report question:
 
-- 回答 `If we want to enter, where should we start?`
-- 为咨询判断中的进入建议和优先动作提供依据
+- `If we want to enter, where should we start?`
+- Supports `Consulting Judgment and Next-step Validation`
 
 Fields to collect:
 
@@ -401,9 +469,9 @@ Fields to collect:
 How it supports judgment:
 
 - 把行业研究转成更接近行动建议的输出
-- 帮助区分“值得看”与“值得现在进入”
+- 区分“值得看”与“值得现在进入”
 
-Output it supports:
+Supported outputs:
 
 - 进入建议表
 - 优先动作清单
@@ -413,6 +481,13 @@ Data quality requirements:
 
 - 进入建议必须回扣市场、盈利、竞争和政策四个维度
 - 不允许脱离前文证据给出泛化建议
+
+Typical sources:
+
+- 前述全部资产库
+- 试点政策
+- 公司案例
+- 场景运营数据
 
 ## 12. 1-hour execution checklist
 
@@ -439,22 +514,22 @@ Data quality requirements:
 ### 30-38 min: Understand business model and monetization
 
 - 建立 business model database
-- 判断盈利逻辑和 entry barriers
+- 判断盈利逻辑和进入壁垒
 
 ### 38-46 min: Assess competition
 
 - 建立 company and competitor database
-- 输出竞争分层和胜负手判断
+- 输出竞争分层和重点公司对比
 
 ### 46-53 min: Review external drivers
 
 - 建立 policy and regulation database、technology and trend database、customer and demand database
-- 输出驱动因素矩阵
+- 输出驱动因素矩阵和政策时间线
 
 ### 53-60 min: Synthesize judgment
 
-- 建立 risk and opportunity database
-- 输出核心矛盾、风险机会矩阵、后续验证优先级
+- 建立 risk and opportunity database 与 entry strategy database
+- 输出核心矛盾、风险机会矩阵、后续验证优先级和进入建议
 
 ## 13. Source quality hierarchy
 
@@ -469,12 +544,6 @@ Data quality requirements:
 7. Expert interviews, podcasts, communities, and secondary commentary
 8. Low-confidence sources that must be marked as unverified
 
-Use rules:
-
-- 优先高置信度来源支持关键事实和关键数字
-- 二手转引数据尽量追溯原始来源
-- 低置信度来源只能作为补充，不可直接支撑核心结论
-
 ## 14. Evidence tagging rules
 
 对每条关键结论、关键数字或高风险表述，尽量打上证据标签：
@@ -484,10 +553,3 @@ Use rules:
 - `[Judgment]` 基于事实形成的分析判断
 - `[Assumption]` 在信息不足情况下的假设
 - `[To verify]` 后续需要验证的信息
-
-Recommended practice:
-
-- 关键市场数字至少标记为 `[Fact]` 或 `[Estimate]`
-- 观点型结论尽量标记为 `[Judgment]`
-- 在输入缺失时补充 `[Assumption]`
-- 对拿不准的内容明确标记 `[To verify]`

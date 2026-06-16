@@ -9,49 +9,40 @@ description: Use this skill when the user wants to quickly understand an unfamil
 
 快速产出一份专业的陌生行业初步研究简报。优先保证研究边界清楚、判断可用、来源明确、结构可复用，并为后续深挖保留扩展空间。
 
-本 Skill 的目标不是整理一份资料清单，而是用咨询公司和行研报告常见的逻辑链回答一组递进问题：
+这个 Skill 不是简单搜集资料，而是按照行研报告逻辑，快速生成一份结论前置、边界清晰、问题递进、证据支撑、图表化输出、可复用的行业研究简报。
 
-1. 这个行业值得看吗。
-2. 我们到底在研究什么。
-3. 它是如何运转的。
-4. 这个赛道空间有多大、增长来自哪里。
-5. 行业内的钱是怎么赚的、利润在哪里。
-6. 谁会赢、为什么会赢、壁垒是什么。
-7. 政策、技术、需求、资本哪些因素会改变格局。
-8. 最终意味着什么，下一步验证什么。
+## Research Spine
 
-本 Skill 默认交付增强版行业研究简报，除非用户明确要求压缩版。在最终版中，以下四类高价值咨询输出默认为必选项：
-
-- 更完整的市场数据表
-- 重点公司对比表
-- 政策时间线
-- “如果要进入这个行业，应先做什么”的建议版
+```text
+初始判断 → 行业边界 → 产业链结构 → 市场空间 → 商业模式 → 竞争格局 → 外部变量 → 核心矛盾 → 风险机会 → 咨询判断 → 后续验证
+```
 
 ## Total Research Logic
 
 ```mermaid
 flowchart TD
-  A["一句话结论 / 初始假设"] --> B["行业定义与研究边界"]
-  B --> C["产业链与价值流"]
-  C --> D["市场规模与增长驱动"]
-  D --> E["商业模式与利润池"]
-  E --> F["竞争格局与胜负手"]
-  F --> G["政策 / 技术 / 需求 / 资本变量"]
-  G --> H["风险、机会与核心矛盾"]
-  H --> I["咨询判断与后续验证清单"]
+  A["Executive Thesis / Initial Hypothesis"] --> B["Industry Definition and Scope"]
+  B --> C["Industry Structure and Value Chain"]
+  C --> D["Market Space and Growth Drivers"]
+  D --> E["Business Model and Profit Pool"]
+  E --> F["Competitive Landscape"]
+  F --> G["External Drivers"]
+  G --> H["Core Contradictions, Risks and Opportunities"]
+  H --> I["Consulting Judgment"]
+  I --> J["Next-step Validation"]
 ```
 
 ## Question Progression
 
 ```mermaid
 flowchart LR
-  A["What is it?"] --> B["How does it work?"]
-  B --> C["How big is it?"]
-  C --> D["How does it make money?"]
-  D --> E["Who wins?"]
-  E --> F["What changes the game?"]
-  F --> G["So what?"]
-  G --> H["What to verify next?"]
+  Q1["What is it?"] --> Q2["How does it work?"]
+  Q2 --> Q3["How big is it?"]
+  Q3 --> Q4["How does it make money?"]
+  Q4 --> Q5["Who wins and why?"]
+  Q5 --> Q6["What changes the game?"]
+  Q6 --> Q7["So what?"]
+  Q7 --> Q8["What to verify next?"]
 ```
 
 ## When to use this skill
@@ -78,8 +69,6 @@ flowchart LR
 - 用户需要实时交易决策
 - 用户没有要求行业层面的结构化分析
 
-遇到这些场景时，可以说明本 Skill 适合作为第一轮认知搭建，再建议更匹配的方法。
-
 ## Required inputs
 
 优先收集以下输入。若信息不完整，不要反复追问；先建立工作假设，再把假设写清楚。
@@ -93,11 +82,6 @@ flowchart LR
 - Priority topics: policy / data / competitors / value chain / customer demand / technology trends / content ecosystem / cases
 - Required output language:
 - Whether sources and links are required:
-```
-
-增强版默认参数：
-
-```markdown
 - Include key company comparison: Yes
 - Include policy timeline: Yes
 - Include entry recommendations: Yes
@@ -115,6 +99,7 @@ flowchart LR
 - Output depth assumed: standard brief
 - Time budget assumed: 1 hour
 - Source requirement assumed: cite key sources where available
+- Enhanced tables assumed: yes
 ```
 
 默认处理原则：
@@ -127,361 +112,351 @@ flowchart LR
 
 ## Workflow
 
-### 1. Establish the investment or consulting relevance
+## Step 1. Establish relevance and initial thesis
 
-Core question this step answers:
+**Core question:**
 
-- 这个行业是否值得进入正式研究流程。
+- 这个行业是否值得进入正式研究流程，当前研究应该围绕什么核心判断展开。
 
-Why this must happen first:
+**Why this follows the previous step:**
 
-- 如果行业本身缺少实际商业意义、研究目的不清或时间预算与任务不匹配，后续所有分析都会变成低效堆料。
-- 先明确“为什么看”，才能决定后续应采用多宽的边界、多少深度和什么判断标准。
+- 这是研究起点。若连“为什么看”都不清楚，后续边界、数据和结论都会失焦。
 
-Evidence or data to use:
+**Evidence / data to use:**
 
-- 用户给出的研究目的
-- 公开可见的市场热度、政策热度、融资热度、公司参与度
-- 能否在短时间内找到足够可信的基础事实
+- 用户研究目的
+- 行业热度、政策热度、融资热度、头部公司参与度
+- 是否能在有限时间内找到足够可信的基础事实
 
-Judgment to form:
+**Judgment to form:**
 
-- 该行业是否适合做 1 小时初步研究
-- 当前更适合做快速扫描还是标准简报
-- 需要围绕什么核心问题组织全文
+- 是否值得做 1 小时快速研究
+- 本次是机会判断、进入判断、客户背景理解还是投研初筛
+- 初始 thesis 是什么
 
-How this leads to the next step:
+**How this leads to the next step:**
 
-- 一旦确认“值得看”以及“为什么看”，下一步就必须把行业边界定清楚，否则后面的市场规模、竞品、政策分析都会口径混乱。
+- 只有明确“为什么看”，才能决定后续研究边界到底该宽还是窄。
 
-Recommended output format:
+**Recommended output format:**
 
 - 一句话研究目标
-- 一段初始假设
-- 一个简短的研究范围说明
+- 初始假设
+- 研究范围说明
 
-Transition / implication:
+**Transition / implication:**
 
-- 因此，下一步需要明确我们到底在研究什么，避免后续所有结论建立在模糊对象之上。
+- 因此，下一步必须先界定我们到底在研究什么，否则后续所有分析都会出现口径混乱。
 
-### 2. Define the industry boundary
+## Step 2. Define industry boundary and scope
 
-Core question this step answers:
+**Core question:**
 
 - 我们研究的对象到底是什么，不是什么。
 
-Why this must happen after the previous step:
+**Why this follows the previous step:**
 
-- 只有在明确研究目的后，才能决定边界应该宽到什么程度，哪些相邻赛道需要纳入，哪些只作为背景说明。
+- 研究目标决定边界宽度。边界不清会直接破坏市场、竞品、政策和盈利分析的一致性。
 
-Evidence or data to use:
+**Evidence / data to use:**
 
-- 行业定义、政策定义、上市公司口径、研究机构口径
-- 相邻概念、常见混用术语、应用场景与技术路径的区分
-- 地理范围、时间范围、统计口径
+- 行业定义口径
+- 政策口径
+- 上市公司与研究机构口径
+- 相邻概念、应用场景、支撑技术、统计范围
 
-Judgment to form:
+**Judgment to form:**
 
-- 本次研究采用何种边界
-- 哪些内容属于核心行业，哪些属于支撑条件，哪些明确排除
-- 哪些口径差异会直接影响后续市场和竞争判断
+- 采用哪一种边界
+- 哪些内容纳入，哪些内容排除
+- 哪些口径差异会影响后续判断
 
-How this leads to the next step:
+**How this leads to the next step:**
 
-- 行业边界一旦确定，下一步就可以拆行业结构，识别价值流、成本流和关键控制点。
+- 边界确定后，才能拆结构、识别价值流和利润池。
 
-Recommended output format:
+**Recommended output format:**
 
 - 行业定义段落
-- Included / excluded scope 列表
-- Adjacent concepts 对照表
+- Included / excluded scope list
+- Adjacent concept comparison table
 
-Transition / implication:
+**Transition / implication:**
 
-- 这一边界将直接决定后续产业链怎么拆、市场规模怎么取数、竞争对手怎么筛选。
+- 行业边界将直接决定产业链怎么拆、市场数据怎么取、竞争对手怎么筛选。
 
-### 3. Map the industry structure and value flow
+## Step 3. Map industry structure and value chain
 
-Core question this step answers:
+**Core question:**
 
-- 行业如何运转，价值如何在不同环节之间流动。
+- 行业如何运转，价值、成本和利润如何在链条中流动。
 
-Why this must happen after boundary definition:
+**Why this follows the previous step:**
 
-- 如果没有清晰边界，产业链拆解会把不相关角色混在一起，导致后面利润池和竞争判断失真。
+- 只有边界清楚，产业链拆解才不会把不相关角色混入同一逻辑。
 
-Evidence or data to use:
+**Evidence / data to use:**
 
-- 上中下游关系
-- 供应商、制造商、品牌方、平台、渠道、服务商、监管方和终端用户
-- 流量入口、基础设施、合规门槛、议价关系
+- 上游、中游、下游、配套角色
+- 供应商、制造商、品牌方、平台、渠道、服务商、监管方、终端用户
+- 议价关系、控制点、进入门槛
 
-Judgment to form:
+**Judgment to form:**
 
 - 哪些环节掌握核心控制点
-- 哪些环节贡献主要收入，哪些环节贡献主要利润
-- 行业结构更接近线性链条、平台网络还是生态协同
+- 哪些环节贡献收入，哪些环节贡献利润
+- 行业更像线性链条、平台网络还是生态系统
 
-How this leads to the next step:
+**How this leads to the next step:**
 
-- 只有理解了行业如何运转，后续才能判断增长空间是出现在全链条、某一环节，还是某一细分节点。
+- 搞清楚行业结构后，才能判断增长空间到底出现在全行业还是某些特定环节。
 
-Recommended output format:
+**Recommended output format:**
 
 - 产业链与价值流图
-- 关键角色表
-- 利润池初判
-- 关键控制点与价值捕获摘要
+- 产业链分析表
+- 关键控制点与利润池摘要
 
-Transition / implication:
+**Transition / implication:**
 
-- 因此，下一步需要识别这些结构中哪些部分承载了真实需求和增长空间，而不是只看一个总市场数字。
+- 既然结构已经明确，下一步就需要判断这些环节承载的市场空间到底有多大，以及增长来自哪里。
 
-### 4. Assess market space and growth drivers
+## Step 4. Assess market space and growth drivers
 
-Core question this step answers:
+**Core question:**
 
-- 市场有多大，增长来自哪里，这个空间是否足以支持后续商业判断。
+- 市场有多大，增长来自哪里，这种增长是否足以支撑后续商业判断。
 
-Why this must happen after structure analysis:
+**Why this follows the previous step:**
 
-- 单独看市场规模没有意义。必须先知道行业结构，才能判断市场数字对应的是哪个环节、哪个口径，以及增长真正发生在哪里。
+- 市场空间必须建立在明确结构和明确口径之上，否则数字容易被误读。
 
-Evidence or data to use:
+**Evidence / data to use:**
 
-- 市场规模、增速、渗透率、销量、用户规模、区域分布
+- 市场规模、增速、渗透率、销量、用户规模、价格区间、区域分布
 - 历史数据与第三方预测
-- 不同来源之间的口径差异
+- 数据来源与口径差异
 
-Judgment to form:
+**Judgment to form:**
 
-- 行业是大而慢、还是小而快
+- 行业是大而慢、小而快，还是结构性分化
 - 增长由需求扩张、供给改善、政策刺激还是技术普及驱动
 - 行业处于萌芽、扩张、分化、整合还是成熟阶段
 
-How this leads to the next step:
+**How this leads to the next step:**
 
-- 市场吸引力只有在盈利逻辑成立时才有意义，因此下一步必须分析商业模式和利润池。
+- 市场大不等于值得进入，下一步必须看盈利质量和利润池分布。
 
-Recommended output format:
+**Recommended output format:**
 
 - 市场数据表
-- 行业阶段判断
-- 增长驱动拆解
 - 扩展市场明细表
-- 细分赛道或区域拆分表
+- 行业阶段判断
 
-Transition / implication:
+**Transition / implication:**
 
-- 由于市场规模本身不能说明盈利质量，下一步需要分析商业模式、单位经济性和利润池分布。
+- 由于市场空间本身不能证明商业价值，下一步必须分析行业到底怎么赚钱、钱留在哪里。
 
-### 5. Analyze business model and profit pool
+## Step 5. Analyze business model and profit pool
 
-Core question this step answers:
+**Core question:**
 
-- 行业内的钱是怎么赚的，利润主要落在哪些环节和哪些模式上。
+- 行业内的钱是怎么赚的，利润主要落在哪些模式和环节。
 
-Why this must happen after market assessment:
+**Why this follows the previous step:**
 
-- 即使行业空间足够大，如果商业模式不成立、单位经济性薄弱或利润池被上游/平台吸走，也未必值得进入。
+- 即使市场足够大，如果盈利逻辑不成立或利润池被他人占据，行业吸引力仍然有限。
 
-Evidence or data to use:
+**Evidence / data to use:**
 
-- 收入来源、成本结构、毛利率逻辑、收费方式、获客路径、留存路径
+- 收入来源、价格机制、成本结构、毛利逻辑、单位经济性、运营杠杆
 - 典型公司商业模式
-- 必要时调用 [database-framework.md](database-framework.md) 中的研究资产框架
+- 场景盈利模型
 
-Judgment to form:
+**Judgment to form:**
 
 - 哪些商业模式更可持续
-- 哪些环节具备高利润池
-- 进入壁垒来自规模、技术、品牌、渠道还是合规
+- 哪些环节拥有更高利润池
+- 进入壁垒来自规模、技术、渠道、品牌还是合规
 
-How this leads to the next step:
+**How this leads to the next step:**
 
-- 商业模式差异会直接解释为什么有些玩家更强，因此下一步需要进入竞争格局分析。
+- 商业模式差异决定了谁更可能在竞争中赢得利润。
 
-Recommended output format:
+**Recommended output format:**
 
-- 商业模式对比表
-- 利润池说明
-- Unit economics / leverage 简析
-- 场景盈利模型
-- “先做哪个场景”的判断
+- 商业模式表
+- 利润池摘要
+- 场景优先级判断
 
-Transition / implication:
+**Transition / implication:**
 
-- 商业模式差异最终会体现在谁能长期胜出，因此下一步需要判断行业中的赢家、胜负手与壁垒结构。
+- 既然商业模式差异决定盈利质量，下一步就要判断谁更有能力长期捕获这些利润。
 
-### 6. Analyze competitive landscape and winning logic
+## Step 6. Analyze competitive landscape and winning logic
 
-Core question this step answers:
+**Core question:**
 
-- 谁更可能赢，为什么能赢，壁垒是什么。
+- 谁会赢，为什么会赢，壁垒在哪里。
 
-Why this must happen after business-model analysis:
+**Why this follows the previous step:**
 
-- 竞争不是简单列公司名单，而是要结合商业模式、利润池和控制点判断谁在行业中拥有结构性优势。
+- 竞争分析不能只列公司名，必须建立在利润池和控制点判断之上。
 
-Evidence or data to use:
+**Evidence / data to use:**
 
-- 头部企业、代表品牌、关键平台或典型参与者
-- 市场份额、渠道覆盖、技术能力、品牌势能、合规资质、资本实力
-- 用户定位和差异化能力
+- 头部企业、代表品牌、关键平台
+- 市场份额或替代指标
+- 渠道能力、技术能力、品牌势能、合规资质、资本实力
 
-Judgment to form:
+**Judgment to form:**
 
 - 行业集中度和分层情况
-- 主要胜负手是价格、产品、服务、渠道、技术、生态还是政策门槛
-- 新进入者可能在哪些位置切入
+- 主要胜负手是什么
+- 新进入者应该避开什么、切入什么
 
-How this leads to the next step:
+**How this leads to the next step:**
 
-- 竞争格局不是静态的，它会被政策、技术、需求和资本变量持续改写，因此下一步要识别外部变量。
+- 竞争格局不是静态的，政策、技术、需求和资本变量会继续改写格局。
 
-Recommended output format:
+**Recommended output format:**
 
-- 竞争分层表
-- 胜负手分析
-- 进入壁垒判断
+- 竞争格局表
 - 重点公司对比表
-- potential partner / competitor map
+- Partner / competitor map
 
-Transition / implication:
+**Transition / implication:**
 
-- 竞争格局的差异最终会受到政策和技术变量影响，因此下一步必须分析外部驱动如何改变游戏规则。
+- 因此，下一步必须分析哪些外部变量会放大领先者优势，或为新进入者打开窗口。
 
-### 7. Review external drivers and regime shifts
+## Step 7. Review external drivers and game changers
 
-Core question this step answers:
+**Core question:**
 
-- 哪些外部变量会改变行业格局、增长速度、竞争结果和进入时点。
+- 什么外部变量会改变行业节奏、竞争结果和进入时点。
 
-Why this must happen after competitive analysis:
+**Why this follows the previous step:**
 
-- 外部变量只有放在现有产业结构和竞争格局中，才能判断它究竟是利好谁、压制谁，还是改变整个利润分配。
+- 竞争优势只有放在政策、技术、需求和资本环境中，才能判断其持续性。
 
-Evidence or data to use:
+**Evidence / data to use:**
 
-- 政策与监管
+- 政策监管、牌照、标准
 - 技术趋势与成熟度
-- 需求侧变化与用户行为
+- 需求变化与用户行为
 - 宏观环境与资本市场因素
 
-Judgment to form:
+**Judgment to form:**
 
-- 哪些驱动是短期催化，哪些是中长期结构趋势
-- 哪些变化会放大领先者优势，哪些会给新进入者窗口
-- 当前行业最大的外部不确定性是什么
+- 哪些变量是短期催化，哪些是中长期趋势
+- 哪些因素会放大龙头优势，哪些会创造新窗口
+- 当前最大外部不确定性是什么
 
-How this leads to the next step:
+**How this leads to the next step:**
 
-- 一旦知道哪些变量会改变行业格局，下一步就能回扣前文，提炼核心矛盾、主要风险和关键机会。
+- 外部变量会重新定义风险和机会，所以下一步要把这些影响收束为核心矛盾与判断。
 
-Recommended output format:
+**Recommended output format:**
 
 - 外部驱动因素矩阵
-- 影响机制说明
-- 时间跨度判断
 - 政策时间线
 - 场景成熟度与时间窗口判断
 
-Transition / implication:
+**Transition / implication:**
 
-- 外部变量的方向和强弱，将决定行业机会是否真实可兑现，也决定风险是短期噪音还是结构性问题。
+- 既然外部变量已经明确，下一步就必须回扣前文证据，判断真正值得押注的机会和最需要警惕的风险。
 
-### 8. Synthesize core contradictions, risks, and opportunities
+## Step 8. Synthesize core contradictions, risks, and opportunities
 
-Core question this step answers:
+**Core question:**
 
-- 综合前面所有分析，行业当前最关键的矛盾、风险和机会分别是什么。
+- 行业当前最关键的核心矛盾、风险和机会分别是什么。
 
-Why this must happen after all prior steps:
+**Why this follows the previous step:**
 
-- 风险和机会不能凭直觉列举，必须基于边界、结构、市场、盈利、竞争和外部变量的综合判断。
+- 风险和机会不能凭感觉列举，必须建立在边界、结构、市场、盈利、竞争和外部变量的综合分析上。
 
-Evidence or data to use:
+**Evidence / data to use:**
 
-- 前述各章节中的关键事实、估计、判断和未决变量
+- 前述章节中的关键事实、估计、判断和未决变量
 - 用户痛点、经营瓶颈、结构性障碍、政策与技术不确定性
 
-Judgment to form:
+**Judgment to form:**
 
-- 行业最重要的核心矛盾
-- 最值得关注的机会在哪里
+- 核心矛盾是什么
+- 最有价值的机会在哪里
 - 哪些风险最可能改变最终判断
 - 哪些问题必须继续验证
 
-How this leads to the next step:
+**How this leads to the next step:**
 
-- 只有在机会和风险被同时衡量后，才可以给出可执行的咨询判断和下一步研究建议。
+- 只有把机会和风险一起衡量，最后的咨询判断才有可执行意义。
 
-Recommended output format:
+**Recommended output format:**
 
 - 风险机会矩阵
-- Core contradiction 摘要
-- To verify 列表
-- “进入行业的优先动作”建议清单
+- Core contradiction summary
+- 进入建议与优先动作草案
 
-Transition / implication:
+**Transition / implication:**
 
-- 既然机会和风险已经回扣到前文证据，最后一步就应该把这些判断整理成一份可直接用于决策讨论的咨询式结论。
+- 下一步需要把这些判断收束成结论前置、可执行、可验证的咨询式简报。
 
-### 9. Produce the consulting-style brief
+## Step 9. Produce the consulting-style brief
 
-Core question this step answers:
+**Core question:**
 
-- 如何把前面所有分析收束成一份结论前置、结构完整、证据可追溯的行业简报。
+- 如何把前面所有分析转化成一份真正能用的咨询式行业简报。
 
-Why this must happen last:
+**Why this follows the previous step:**
 
-- 只有在完成判断链条之后，报告才不是一堆并列章节，而是一份有因果关系和决策含义的研究成果。
+- 只有完成判断链条，报告才不是堆叠章节，而是一份有因果、有优先级、有行动指向的研究产物。
 
-Evidence or data to use:
+**Evidence / data to use:**
 
-- 全部核心章节结论
+- 所有前序章节结论
 - 来源清单与证据标签
-- 未验证事项和后续研究建议
+- 后续验证问题
 
-Judgment to form:
+**Judgment to form:**
 
 - 一句话结论
 - 核心判断
 - 置信度与最大不确定性
-- 下一步优先验证问题
+- 下一步验证优先级
 
-How this leads to the next step:
+**How this leads to the next step:**
 
-- 本步骤本身是交付终点，但输出中必须显式列出下一轮验证和后续研究方向，便于从初步研究转入深挖。
+- 本步骤是交付终点，但输出必须为下一轮深挖保留验证接口。
 
-Recommended output format:
+**Recommended output format:**
 
 - 使用 [report-template.md](report-template.md) 输出完整 Markdown 简报
 
-Transition / implication:
+**Transition / implication:**
 
-- 最终交付不仅要回答“现在怎么看”，还要回答“接下来验证什么、继续研究什么”。
+- 最终交付不仅要回答“现在怎么看”，还要回答“接下来验证什么、先做什么”。
 
 ## Output rules
 
-- 时间紧时优先保证研究链条完整，而不是追求信息穷尽
-- 结论必须前置，每章都要形成判断，而不是只给资料
-- 每个章节结尾必须有一句 Transition / Implication，说明本章如何引出下一章
 - 不允许只堆砌行业信息
 - 不允许每章只列 bullet points 而没有判断
-- 不允许小问之间互相独立
-- 不允许只写“市场规模、竞争格局、政策趋势”但不解释它们之间的因果关系
-- 每个关键小问必须回答“这对最终判断意味着什么”
-- 明确区分事实、解释和推断
+- 不允许只写事实不写判断
+- 不允许章节之间没有承接
+- 不允许只写“市场规模、竞争格局、政策趋势”而不解释因果关系
+- 每个章节必须回答 `So what?`
+- 每个章节结尾必须写 `Transition / Implication`
+- 时间紧时优先保证研究链条完整，而不是追求信息穷尽
+- 结论必须前置，每章都要形成判断
+- 明确区分事实、估计、判断、假设
+- 对不确定信息必须标注 `[To verify]`
 - 关键数字和结论必须尽量附上来源或链接
-- 标注假设、缺失信息和未解决矛盾点
 - 保留来源冲突的数据口径，不要强行合并
+- 标注假设、缺失信息和未解决矛盾点
 - 不要虚构数据
-- 对无法核实的数据必须标注 `[To verify]`
 - 如果给出进入建议，必须回扣前文的市场、盈利、竞争和政策判断
 - 如果给出重点公司结论，不能只列公司名，必须说明其胜负手与局限
 - 如果给出政策时间线，必须说明每个政策节点对行业意味着什么
-- 保持咨询风格：结论先行、结构清楚、面向判断
 - 输出必须能被复制进咨询材料或内部研究文档
 
 ## Default deliverables
@@ -493,21 +468,23 @@ Transition / implication:
 - 结构化 Markdown 行业研究简报
 - 产业链与价值流图
 - 市场数据表
-- 更完整的重点市场指标表
-- 竞争分层表
+- 扩展市场明细表
+- 产业链分析表
+- 商业模式表
+- 竞争格局表
 - 重点公司对比表
 - 外部驱动因素矩阵
 - 政策时间线
 - 风险机会矩阵
 - 行业关键 KPI 列表
 - 关键控制点与利润池摘要
-- 来源清单
+- 来源和证据说明表
 - 后续验证优先级表
 - 进入建议与优先动作
 
 ## Optional extensions
 
-以下内容作为增强版最终版之外的进一步扩展，仅在用户明确要求时加入：
+以下内容作为最终版之外的进一步扩展，仅在用户明确要求时加入：
 
 - 八大数据库沉淀
 - 竞品运营与盈利拆解
@@ -515,12 +492,9 @@ Transition / implication:
 - 细分赛道知识地图
 - 长期动态情报监控方案
 - 公司案例库
-- 政策时间线
 - 投融资与资本市场动态
 - 客户访谈提纲
 - 后续深度研究计划
-- 重点公司深度对比页
-- 行业进入策略建议页
 
 ## Source and citation standards
 
@@ -548,13 +522,11 @@ Transition / implication:
 交付前自查：
 
 - 是否从“值不值得看”到“后续验证什么”形成了完整研究链条
-- `SKILL.md` 是否不再像散点清单，而是一个完整研究流程
+- `SKILL.md` 是否是完整研究流程，而不是散点清单
 - 每章是否都形成判断，并说明对下一章的影响
-- 是否包含至少 2 个 Mermaid 图
+- 是否包含至少 3 个 Mermaid 图
+- 是否包含至少 7 个 Markdown 表格模板
 - 是否解释了市场、商业模式、竞争、政策之间的因果关系
-- 是否包含产业链图、市场表、竞争表、驱动矩阵、风险机会矩阵
-- 是否在合适情况下补充了重点公司对比表、政策时间线和进入建议
-- 是否区分事实、估计、判断、假设和待验证项
 - 是否保留来源分级、证据标签、不要虚构数据、标注 `[To verify]`
 - 是否适合在 1 小时内完成一版初步研究
 - 是否可直接复制进咨询材料或内部研究文档
@@ -572,7 +544,18 @@ Inputs:
 - Priority topics: policy, market size, value chain, competitors, business models, opportunities and risks
 
 Expected output:
-A consulting-style Markdown brief with executive thesis, industry boundary, logic map, value-chain analysis, market data table, business model analysis, competitive landscape, external-driver matrix, risk-opportunity synthesis, source list, and next-step validation priorities.
+
+- executive thesis
+- logic map
+- industry boundary
+- value-chain and profit-pool analysis
+- market tables
+- business-model analysis
+- competition tiering
+- company comparison
+- policy timeline
+- risk-opportunity synthesis
+- validation priorities
 
 ## Chinese default prompt template
 

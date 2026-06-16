@@ -1,4 +1,4 @@
 interface:
   display_name: "快速行业研究"
   short_description: "快速产出结构化行业研究简报"
-  default_prompt: "Use $quick-industry-research to quickly research an unfamiliar industry and deliver a structured brief with sources, market, competition, business model, policy, and risks."
+  default_prompt: "Use $quick-industry-research to quickly research an unfamiliar industry and deliver a structured consulting-style brief with sources, market, competition, business model, policy, risks, opportunities, and next-step validation questions."

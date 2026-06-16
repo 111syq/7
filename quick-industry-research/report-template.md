@@ -1,20 +1,30 @@
 # Quick Industry Research Report Template
 
-Use this template to produce a consulting-style quick brief. The report should read as a chain of reasoning, not a stack of unrelated sections. Each chapter must end with a short `Transition / Implication` sentence that explains how the chapter conclusion leads to the next chapter.
+Use this template to produce a consulting-style quick brief. It should read as a progressive reasoning chain, not a data dump. Each chapter must contain a core question, analysis, judgment, recommended visual output, and a `Transition / Implication`.
 
 ## Logic Map
 
 ```mermaid
 flowchart TD
-  A["Executive Thesis"] --> B["Research Scope and Initial Hypothesis"]
-  B --> C["Industry Definition"]
-  C --> D["Industry Structure"]
-  D --> E["Market Space"]
-  E --> F["Business Model"]
-  F --> G["Competitive Landscape"]
-  G --> H["External Drivers"]
-  H --> I["Risks and Opportunities"]
-  I --> J["Consulting Judgment and Validation"]
+  A["Executive Thesis / Initial Hypothesis"] --> B["Industry Definition and Scope"]
+  B --> C["Industry Structure and Value Chain"]
+  C --> D["Market Space and Growth Drivers"]
+  D --> E["Business Model and Profit Pool"]
+  E --> F["Competitive Landscape"]
+  F --> G["External Drivers"]
+  G --> H["Core Contradictions, Risks and Opportunities"]
+  H --> I["Consulting Judgment"]
+  I --> J["Next-step Validation"]
+```
+
+## Industry Structure and Value Flow
+
+```mermaid
+flowchart LR
+  U["Upstream: Inputs and Resources"] --> M["Midstream: Production / Integration"]
+  M --> D["Downstream: Channels and Customers"]
+  E["Enablers: Technology / Infrastructure / Regulation"] --> M
+  D --> P["Revenue and Profit Capture"]
 ```
 
 ## Template
@@ -24,37 +34,71 @@ flowchart TD
 
 ## 0. Executive Thesis
 
+Core question:
+- What is the current best conclusion in one sentence?
+
+Analysis:
 - One-sentence conclusion:
 - Core judgment:
 - Confidence level:
 - Key uncertainty:
 
+Judgment output:
+- Why this industry matters now:
+
+Recommended visual:
+- One-line thesis block
+
 Transition / Implication:
-- This thesis is the current best view; the next section defines the scope and assumptions that make the conclusion valid.
+- This thesis only holds under a defined scope, so the next section sets the assumptions and research boundary.
 
 ## 1. Research Scope and Initial Hypothesis
 
+Core question:
+- What exactly is the research scope and what initial hypothesis are we testing?
+
+Analysis:
 - Region / time scope / research purpose:
 - What is included:
 - What is excluded:
 - Initial hypothesis:
 - Why this scope matters for later analysis:
 
+Judgment output:
+- Scope sufficiency and likely boundary risk:
+
+Recommended visual:
+- Scope summary box
+
 Transition / Implication:
 - Because the research scope determines which companies, market data, and policy signals count as relevant, the next section defines exactly what the industry is.
 
-## 2. Industry Definition: What exactly are we studying?
+## 2. Industry Definition
 
+Core question:
+- What exactly are we studying?
+
+Analysis:
 - Definition:
 - Adjacent concepts:
 - Common misunderstandings:
 - Data / statistical scope:
 
+Judgment output:
+- Chosen boundary and why it matters:
+
+Recommended visual:
+- Boundary comparison table
+
 Transition / Implication:
-- This boundary determines which value chain and market data should be used next.
+- This boundary determines which value chain, market data, and competitors should be used next.
 
-## 3. Industry Structure: How does the industry work?
+## 3. Industry Structure and Value Chain
 
+Core question:
+- How does the industry work and where do value, cost, and profit flow?
+
+Analysis:
 - Upstream:
 - Midstream:
 - Downstream:
@@ -64,27 +108,43 @@ Transition / Implication:
 - Profit pool:
 - Key control points:
 
-Industry structure diagram:
+Judgment output:
+- Which segments control economics and why:
 
-```mermaid
-flowchart LR
-  U[Upstream: core inputs] --> M[Midstream: production/integration]
-  M --> D[Downstream: channels/customers]
-  E[Enablers: technology, infrastructure, regulation] --> M
-  D --> P[Revenue and profit capture]
-```
+Recommended visuals:
+- Industry structure diagram
+- Value-chain analysis table
+
+Value-chain analysis table:
+
+| Value-chain segment | Key players | Cost drivers | Revenue logic | Bargaining power | Profit potential |
+| --- | --- | --- | --- | --- | --- |
+| Upstream |  |  |  | High / Medium / Low |  |
+| Midstream |  |  |  | High / Medium / Low |  |
+| Downstream |  |  |  | High / Medium / Low |  |
 
 Transition / Implication:
 - After understanding how value moves across the industry, the next question is whether that structure supports meaningful market space and growth.
 
-## 4. Market Space: How large is the opportunity?
+## 4. Market Space and Growth Drivers
 
+Core question:
+- How large is the opportunity, and what actually drives growth?
+
+Analysis:
 - Market size:
 - Growth rate:
 - Penetration rate:
 - Regional or segment split:
 - Data source and scope differences:
 - Industry stage judgment:
+
+Judgment output:
+- Attractiveness of market size versus quality of growth:
+
+Recommended visuals:
+- Market data table
+- Extended market detail table
 
 Market data table:
 
@@ -93,7 +153,6 @@ Market data table:
 | Market size |  |  |  |  | Fact / Estimate |  |
 | Growth rate |  |  |  |  | Fact / Estimate |  |
 | Penetration rate |  |  |  |  | Fact / Estimate |  |
-| User scale / volume |  |  |  |  | Fact / Estimate |  |
 
 Extended market detail table:
 
@@ -102,40 +161,63 @@ Extended market detail table:
 |  |  |  |  |  |  |
 
 Transition / Implication:
-- Market attractiveness only matters if business model and profit pool are viable, so the next section focuses on how the industry actually makes money.
+- Market attractiveness alone cannot prove industry quality, so the next section asks whether the business model converts market growth into profit.
 
-## 5. Business Model: How does the industry make money?
+## 5. Business Model and Profit Pool
 
+Core question:
+- How does the industry make money, and where does profit actually stay?
+
+Analysis:
 - Revenue streams:
 - Cost structure:
 - Profit pools:
 - Unit economics / operating leverage:
 - Entry barriers:
 
-Business model comparison table:
+Judgment output:
+- Which models are structurally attractive and which are weak:
 
-| Model | Revenue source | Cost driver | Margin logic | Key barrier | Implication |
+Recommended visuals:
+- Business model table
+- Profit-pool summary
+
+Business model table:
+
+| Business model | Revenue source | Cost structure | Margin logic | Scalability | Key risk |
 | --- | --- | --- | --- | --- | --- |
-|  |  |  |  |  |  |
+| Model A |  |  |  | High / Medium / Low |  |
+| Model B |  |  |  | High / Medium / Low |  |
 
 Transition / Implication:
-- Business model differences explain why some players outperform others, so the next section identifies who is likely to win and why.
+- Business model differences explain why some players capture profit better than others, so the next section identifies who is likely to win.
 
-## 6. Competitive Landscape: Who wins and why?
+## 6. Competitive Landscape
 
+Core question:
+- Who wins and why?
+
+Analysis:
 - Player tiers:
 - Market position:
 - Differentiation dimensions:
 - Competitive advantages:
 - Weaknesses or constraints:
 
+Judgment output:
+- Likely winners, structural losers, and open niches:
+
+Recommended visuals:
+- Competitive landscape table
+- Key company comparison table
+
 Competitive landscape table:
 
-| Tier | Player type/company | Positioning | Advantage source | Weakness | Likely strategy |
+| Tier | Player type / company | Positioning | Advantage source | Weakness | Likely strategy |
 | --- | --- | --- | --- | --- | --- |
-| Tier 1 |  |  |  |  |  |
-| Tier 2 |  |  |  |  |  |
-| Tier 3 |  |  |  |  |  |
+| Leader |  |  |  |  |  |
+| Challenger |  |  |  |  |  |
+| Niche player |  |  |  |  |  |
 
 Key company comparison table:
 
@@ -144,14 +226,25 @@ Key company comparison table:
 |  |  |  |  |  |  |  |
 
 Transition / Implication:
-- Competition cannot be understood in isolation, because policy, technology, demand, and capital can still change the rules of the game.
+- Competition must be read together with policy, technology, demand, and capital shifts, because these forces can quickly reshape advantage.
 
-## 7. External Drivers: What changes the game?
+## 7. External Drivers
 
+Core question:
+- What changes the game?
+
+Analysis:
 - Policy and regulation:
 - Technology trends:
 - Demand-side changes:
 - Macro and capital market factors:
+
+Judgment output:
+- Which external variables matter most and on what timeline:
+
+Recommended visuals:
+- External-driver matrix
+- Policy timeline
 
 External-driver matrix:
 
@@ -169,32 +262,61 @@ Policy timeline:
 |  |  |  |  |  |
 
 Transition / Implication:
-- External drivers reshape risks, opportunities, and timing, so the next section weighs these forces against the industry’s internal strengths and weaknesses.
+- External drivers reshape both upside and downside, so the next section weighs opportunity against risk and identifies the real industry contradictions.
 
 ## 8. Core Contradictions, Risks and Opportunities
 
+Core question:
+- So what are the real contradictions, risks, and opportunities?
+
+Analysis:
 - Core industry contradiction:
 - User pain points:
 - Operating bottlenecks:
 - Structural risks:
 - Growth opportunities:
 
+Judgment output:
+- Highest-conviction opportunities and most important risks:
+
+Recommended visual:
+- Risk-opportunity matrix
+
 Risk-opportunity matrix:
 
 | Theme | Opportunity | Supporting evidence | Risk | Confidence | What to verify next |
 | --- | --- | --- | --- | --- | --- |
-|  |  |  |  |  |  |
+| Market growth |  |  |  | High / Medium / Low |  |
+| Competition |  |  |  | High / Medium / Low |  |
+| Policy |  |  |  | High / Medium / Low |  |
 
 Transition / Implication:
-- Final recommendation should only come after weighing opportunity against risk, so the last section converts these findings into a consulting judgment and validation plan.
+- Once opportunity and risk are weighed together, the final task is to convert them into an actionable consulting judgment and validation plan.
 
 ## 9. Consulting Judgment and Next-step Validation
 
+Core question:
+- What should we conclude, and what must be verified next?
+
+Analysis:
 - What matters most:
 - Where to enter first:
 - What to monitor:
 - Biggest uncertainty:
 - Recommended next research actions:
+
+Judgment output:
+- Entry recommendation and decision implications:
+
+Recommended visuals:
+- Validation priority table
+- Entry recommendation table
+
+Validation priority table:
+
+| Validation question | Why it matters | Evidence needed | Priority | Suggested source |
+| --- | --- | --- | --- | --- |
+|  |  |  | High / Medium / Low |  |
 
 Entry recommendation table:
 
@@ -202,29 +324,40 @@ Entry recommendation table:
 | --- | --- | --- | --- | --- |
 |  |  |  |  |  |
 
-Next-step validation priority table:
-
-| Priority | Question to verify | Why it matters | Evidence needed | Owner / next action |
-| --- | --- | --- | --- | --- |
-| High |  |  |  |  |
-| Medium |  |  |  |  |
-| Low |  |  |  |  |
-
 Transition / Implication:
-- This section closes the first-pass brief and defines the bridge from rapid research to deeper validation work.
+- This section closes the first-pass brief and creates a bridge from rapid industry research to deeper validation work.
 
 ## 10. Source List and Evidence Notes
 
-| Source | Type | Key fact used | Reliability | Link |
-| --- | --- | --- | --- | --- |
-|  |  |  |  |  |
+Core question:
+- What evidence supports the conclusions, and where are the limitations?
+
+Analysis:
+- Source list
+- Type
+- Key fact used
+- Reliability
+- Limitation
+- Link
+
+Judgment output:
+- Source sufficiency and weakest evidence points:
+
+Recommended visual:
+- Source and evidence notes table
+
+Source and evidence notes table:
+
+| Source | Type | Key fact used | Reliability | Limitation | Link |
+| --- | --- | --- | --- | --- | --- |
+|  | Official / Research / Media / Company |  | High / Medium / Low |  |  |
 ```
 
 ## Writing Rules
 
-- Do not treat each section as an isolated bullet list.
+- This report is not a data collection checklist.
+- Do not treat sections as isolated bullet lists.
 - Every chapter must answer: `What does this mean for the final judgment?`
 - Every chapter must end with a transition sentence to the next chapter.
+- Facts, estimates, judgments, assumptions, and `[To verify]` items must be separated.
 - Prefer evidence-backed conclusions over descriptive summaries.
-- Preserve uncertainty explicitly with `[Estimate]`, `[Assumption]`, and `[To verify]`.
-- When possible, enrich the brief with an extended market table, key company comparison, policy timeline, and entry recommendation table.
